@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Apr 08, 2025 at 06:39 AM
--- Server version: 10.6.21-MariaDB-cll-lve
--- PHP Version: 8.3.19
+-- Host: 127.0.0.1
+-- Creato il: Apr 18, 2025 alle 17:51
+-- Versione del server: 10.4.32-MariaDB
+-- Versione PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Struttura della tabella `comments`
 --
 
 CREATE TABLE `comments` (
@@ -36,22 +36,19 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `comments`
+-- Dump dei dati per la tabella `comments`
 --
 
 INSERT INTO `comments` (`id`, `user_id`, `comment`, `parent_id`, `created_at`) VALUES
-(1, 1, 'First top-level comment', NULL, '2025-04-04 11:02:22'),
-(2, 1, 'Second top-level comment', NULL, '2025-04-04 11:02:22'),
-(62, 4, 'test', NULL, '2025-04-07 12:01:46'),
-(63, 4, 'ok', 62, '2025-04-07 12:01:57'),
-(64, 4, 'ok', 1, '2025-04-07 12:03:30'),
-(65, 4, 'hi', 2, '2025-04-07 12:04:29'),
-(66, 4, 'helo', NULL, '2025-04-07 14:39:07');
+(69, 9, 'Veramente un ottimo corso formativo!', NULL, '2025-04-12 10:42:40'),
+(70, 10, 'Ho appreso tantissimo da questo corso.', NULL, '2025-04-12 10:44:37'),
+(71, 12, 'Materiale davvero esaustivo.', NULL, '2025-04-14 21:53:43'),
+(72, 10, 'Davvero un ottimo corso formativo, argomenti dettagliati e di semplice comprensione.', NULL, '2025-04-17 16:48:17');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struttura della tabella `users`
 --
 
 CREATE TABLE `users` (
@@ -64,48 +61,46 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `users`
+-- Dump dei dati per la tabella `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`, `image`) VALUES
-(1, 'admin', 'admin@example.com', '22334455', '2025-04-04 11:02:22', ''),
-(2, 'Ahmad', 'a@gmail.com', '123456', '2025-04-05 01:24:13', ''),
-(3, 'Ali', 'ali@gmail.com', '1122', '2025-04-05 10:27:40', ''),
-(4, 'Jaun', 'ja@gmail.com', '1122', '2025-04-06 10:33:31', 'uploads/67f2587b40a96.png'),
-(5, 'Moeed', 'moeed@gmail.com', '12345', '2025-04-06 12:38:44', 'uploads/67f275d43a981.jpeg'),
-(6, 'giovanni', 'giovanni.pipitone96@gmail.com', 'GiovanniP96$', '2025-04-08 07:08:41', '');
+(9, 'Martina Rossi', 'martina.rossi@gmail.com', 'MartinaR96', '2025-04-12 10:42:20', ''),
+(10, 'Giovanni Pipitone', 'giovanni.pipitone@gmail.com', 'Giovanni96', '2025-04-12 10:43:46', ''),
+(11, 'Carlos', 'carlos.privitera@gmail.com', 'CarlosP96', '2025-04-12 13:08:45', ''),
+(12, 'Federico Voli', 'federico.voli@gmail.com', 'Federico94', '2025-04-14 21:51:11', '');
 
 --
--- Indexes for dumped tables
+-- Indici per le tabelle scaricate
 --
 
 --
--- Indexes for table `comments`
+-- Indici per le tabelle `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Indici per le tabelle `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT per le tabelle scaricate
 --
 
 --
--- AUTO_INCREMENT for table `comments`
+-- AUTO_INCREMENT per la tabella `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT per la tabella `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
